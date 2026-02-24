@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Recipe</title>
+    <title>The Clean Cookbook</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,13 +39,13 @@
 <body>
 
     {% if error %}
-        <h1>Something went wrong</h1>
+        <h1>Something went wrong!</h1>
         <p>{{ error }}</p>
     {% else %}
 
         <img src="{{ image }}" alt="Recipe photo">
         <h1>{{ title }}</h1>
-        <p>Total time: {{ total_time }} minutes</p>
+        <p>Total estimated time: {{ total_time }} minutes</p>
         <p>Serves: {{ yields }}</p>
 
         <h2>Ingredients</h2>
