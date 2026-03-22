@@ -31,5 +31,5 @@ def recipe():
             steps = [],
             image = None,
             total_time = None,
-            servings = None,
+            servings = None
         )
