@@ -3,31 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Clean Cookbook</title>
+    <title>Cookbook</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             color: #333333;
             padding: 20px;
         }
 
         h1 {
             font-size: 28px;
-            color: #c0392b;
+            color: #000000;
         }
 
         h2 {
             font-size: 20px;
-            color: #c0392b;
+            color: #000000;
         }
 
         p {
             font-size: 16px;
-        }
-
-        img {
-            width: 50%;
         }
 
         li {
@@ -39,25 +35,25 @@
 <body>
 
     {% if error %}
-        <h1>Something went wrong!</h1>
+        <h1>Oh no, something went wrong!</h1>
         <p>{{ error }}</p>
     {% else %}
-
-        <img src="{{ image }}" alt="Recipe photo">
         <h1>{{ title }}</h1>
-        <p>Total estimated time: {{ total_time }} minutes</p>
-        <p>Serves: {{ yields }}</p>
-
-        <h2>Ingredients</h2>
+        <p>Total Time to Make: {{ total_time }} Minutes</p>
+        <p>Serves: {{ servings }}</p>
+        <img src="{{ image }}">
+        <h4>Ingredients</h4>
         <ul>
+            <!-- Loop(Take all ingredients until there's none left to yoink -->
             {% for item in ingredients %}
                 <li>{{ item }}</li>
             {% endfor %}
         </ul>
 
-        <h2>Instructions</h2>
+        <h4>Got it? Now here's what you'll need to do!</h4>
+        <!-- Do the same thing as before, but with steps instead of ingredients --!>
         <ol>
-            {% for step in instructions %}
+            {% for step in steps %}
                 <li>{{ step }}</li>
             {% endfor %}
         </ol>
